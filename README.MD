@@ -1,33 +1,21 @@
 
-To do list - Gerenciador de tarefas !
+Listagem de repositórios do Github !
 -------------
-![Imagem Logo To do list](http://www.luizangelo.com/todolist/logo.jpg)
--------------
+![Imagem Logo To do list](http://www.luizangelo.com/list-repositories/logo.jpg)
 
 ----------
-##### **Demo**: [http://www.luizangelo.com/todolist/](http://www.luizangelo.com/todolist/)
+##### **Demo**: [http://www.luizangelo.com/list-repositories/](http://www.luizangelo.com/list-repositories/)
 
 ---------
 
 ####  **Sobre o projeto**
 
-Este projeto contém um gerenciador de tarefas desenvolvido com `AngularJS` , `SASS` e `Gulp`. Nele você poderá realizar diversas ações, inclusive em seu smartphone, porém o mesmo **não** guardará as modificações realizadas, pois não foi implementado a programação back-end.
+Este projeto contém uma página de listagem de repositórios do Github desenvolvido com `AngularJS` , `SASS` e `Gulp`. 
 
 > **Neste projeto você poderá:**
 
-> - Adicionar
-> - Remover
-> - Editar
-> - Marcar como finalizado
-
-
-----------
-
-> **Também existem validações de conteúdo, como:**
-
-> - Tarefas com menos de 5 caracteres
-> - Tarefas com mais de 80 caracteres
-> - Confirmação para exclusão
+> - Listar todos os repositórios do seu perfil do Github
+> - Filtrar pelo título do repositório
 
 ----------
 
@@ -35,7 +23,7 @@ Este projeto contém um gerenciador de tarefas desenvolvido com `AngularJS` , `S
 
  Para executar o projeto basta:
  
-1. Fazer o download ou clonar o projeto - https://github.com/luizangelomedeiros/todolist.git
+1. Fazer o download ou clonar o projeto - https://github.com/luizangelomedeiros/list-repositories.git
 2. Navegue até a pasta raiz.
 3. Instale as as dependências executando o comando `npm install`
 4. Execute o projeto pelo comando `gulp`. 

@@ -176,12 +176,10 @@ gulp.task('copy', function() {
 gulp.task('default', ['scaffold','copy','browserSync', 'scripts', 'styles', 'html'], function() {
     gulp.watch([
         app+'js/*.js',
-        app+'js/controllers/*.js',
-        app+'js/directives/*.js'
+        app+'js/controllers/*.js'
     ], ['scripts']);
     gulp.watch(app+'scss/**', ['styles']);
     gulp.watch([
-        app+'*.html',
-        app+'js/directives/*.html'
+        app+'*.html'
     ], ['html']);
 });

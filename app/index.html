@@ -32,7 +32,9 @@
                         <a href="{{item.html_url}}" target="_blank" class="list-repositories__link">
                             <!-- usuario -->
                             <div class="flex">
-                                <span class="font-icon icon-user"></span>
+                                <span class="font-icon icon-user">
+                                    <div class="list-repositories__tooltip" data-title="PROJETO"></div>
+                                </span>
                                 <p class="list-repositories__text">
                                     {{item.owner.login}}
                                 </p>                
@@ -40,7 +42,9 @@
                             
                             <!-- projeto -->
                             <div class="flex">
-                                <span class="font-icon icon-folder-open"></span>
+                                <span class="font-icon icon-folder-open">
+                                    <div class="list-repositories__tooltip" data-title="PROJETO"></div>
+                                </span>
                                 <p class="list-repositories__text">
                                     {{item.name}}
                                 </p>                
@@ -48,23 +52,29 @@
                             
                             <!-- linguagem -->
                             <div class="flex">
-                                <span class="font-icon icon-screen"></span>
+                                <span class="font-icon icon-screen">
+                                    <div class="list-repositories__tooltip" data-title="LINGUAGEM"></div>
+                                </span>
                                 <p class="list-repositories__text">
                                     {{item.language ? item.language : 'Nenhuma linguagem'}}
                                 </p>                
                             </div>
                             
                             <!-- forks -->
-                            <div class="flex">
-                                <span class="font-icon icon-code-fork"></span>
+                            <div class="flex">                                
+                                <span class="font-icon icon-code-fork">
+                                    <div class="list-repositories__tooltip" data-title="FORKS"></div>
+                                </span>
                                 <p class="list-repositories__text">
                                     {{item.forks}}
                                 </p>  
                             </div>
 
                             <!-- stars -->
-                            <div class="flex">
-                                <span class="font-icon icon-star"></span>
+                            <div class="flex">                                
+                                <span class="font-icon icon-star">
+                                    <div class="list-repositories__tooltip" data-title="STARS"></div>
+                                </span>
                                 <p class="list-repositories__text">
                                     {{item.stargazers_count}}
                                 </p>  
