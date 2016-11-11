@@ -23,16 +23,16 @@
     "gulp": "^3.9.1",
     "gulp-shell": "^0.5.2"
   },
-  "description": "To do List de tarefas desenvolvido com Angular, Sass, Gulp\u001b[D\u001b[D\u001b[D\u001b[D\u001b[ e Gulp",
+  "description": "Listagem de repositórios do Github desenvolvido com Angular, Sass, Gulp\u001b[D\u001b[D\u001b[D\u001b[D\u001b[ e Gulp",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luizangelomedeiros/todolist.git"
+    "url": "git+https://github.com/luizangelomedeiros/list-repositories.git"
   },
   "keywords": [
-    "todoliist\u001b[D\u001b[\u001b[3~\u001b[3~\u001b[3~st\u001b[3~\u001b[3~"
+    "list-repositories\u001b[D\u001b[\u001b[3~\u001b[3~\u001b[3~st\u001b[3~\u001b[3~"
   ],
   "bugs": {
-    "url": "https://github.com/luizangelomedeiros/todolist/issues"
+    "url": "https://github.com/luizangelomedeiros/list-repositories/issues"
   },
-  "homepage": "https://github.com/luizangelomedeiros/todolist#readme"
+  "homepage": "https://github.com/luizangelomedeiros/list-repositories#readme"
 }
