@@ -1,0 +1,42 @@
+/* IPAD OU MENOR */
+@media screen and (max-width : 850px) {
+	.container {
+	    width: 90%;
+	    margin-left: -45%;
+	}
+	.todo-list .todo-list__item {
+	    align-items: center;
+	}
+	.todo-list__item.editar .todo-list__marcar,
+	.todo-list__item.editar .todo-list__item-text{
+		display: none;
+	}
+	.modal__conteudo {
+    	width: 90% !important;
+	}
+}
+
+/* IPHONE 5 OU MENOR */
+@media screen and (max-width : 350px) {
+	.todo-list{ 
+		.todo-list__item {
+    		font-size: 14px !important;
+		}
+		.todo-list__title {
+	    	font-size: 55px;
+		    &:before {
+			    font-size: 40px;
+			}
+		}
+		.todo-list__input {
+    		font-size: 13px !important;
+		}
+		.todo-list__remover {
+		    margin-right: 12px  !important;
+		    margin-left: 0px  !important;
+		}
+		.todo-list__editar {
+        	padding-right: 10px !important; 
+		}
+	}
+}

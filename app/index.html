@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="listGithub">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title> Listagem de Repositórios do Github </title>
+        <link rel="stylesheet" href="css/min/styles.min.css">
+        <base href="/">
+    </head>
+    <body ng-controller="ListRepositories">        
+        <section class="container">
+            <main id="listRepositoriesGithub" class="list-repositories" role="main">
+                <h1 class="list-repositories__title">
+                     Repositórios
+                </h1>
+
+                <!-- ADICIONAR ITEM -->
+                <form name="formAdd" id="formAdd" ng-submit="addItemTodoList(formAdd)" focus-invalido novalidate>
+                    <div class="list-repositories__search">
+                        <input type="text" id="inputAdd" class="list-repositories__input" ng-model="itemToDoList" placeholder="Buscar por nome do repositório" name="addItemToList" ng-minlength="5" ng-maxlength="80" required>
+                        <button class="list-repositories__button-search"></button>
+                    </div>
+                </form>
+                
+                <!-- LISTA DE REPOSITÓRIOS -->
+                <ul class="list-repositories__ul">
+                    <li class="list-repositories__item" ng-repeat="item in itens">
+                        <a href="{{item.html_url}}" target="_blank">
+                            <div class="flex">
+                                <span class="font-icon icon-user"></span>
+                                <p class="list-repositories__text">
+                                    {{item.owner.login}}
+                                </p>                
+                            </div>
+                            
+                            <div class="flex">
+                                <span class="font-icon icon-folder-open"></span>
+                                <p class="list-repositories__text">
+                                    {{item.name}}
+                                </p>                
+                            </div>
+                            
+                            <div class="flex">
+                                <span class="font-icon icon-screen"></span>
+                                <p class="list-repositories__text">
+                                    {{item.language}}
+                                </p>                
+                            </div>
+                            
+                            <div class="flex">
+                                <span class="font-icon icon-code-fork"></span>
+                                <p class="list-repositories__text">
+                                    {{item.forks}}
+                                </p>  
+                            </div>
+
+                            <div class="flex">
+                                <span class="font-icon icon-star"></span>
+                                <p class="list-repositories__text">
+                                    {{item.forks}}
+                                </p>  
+                            </div>
+                        </a>
+                    </li>
+                </ul> 
+                
+                <!-- NUMERO TOTAL DE TAREFAS -->
+                <div class="list-repositories__total">
+                    <span class="list-repositories__total-texto">
+                        {{numeroDeItens()}}
+                    </span>
+                </div>
+            </main>
+        </section>
+
+        <script src="js/min/libs-angular.min.js"></script>
+        <script src="js/min/main.min.js"></script>
+        <script src="js/min/controllers.min.js"></script>
+    </body>
+</html>

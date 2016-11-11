@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+$fontePrincipal	: 'Lato', sans-serif;
+$fonteSecundaria: 'Pacifico', cursive;
+$fonteIcones	: 'icomoon';
+$CorPrincipal	: #F5F5F5;
+$CorSecundaria	: #34495e;
+
+body{
+    color:#333333; 
+	font-family: $fontePrincipal;
+    font-size: 14px;
+    background: $CorPrincipal;
+}
+
+*{
+	font-family: $fontePrincipal;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+	width:10px;
+	height:10px;
+	background:$CorPrincipal;
+	@include border-radius(4px);
+}
+
+::-webkit-scrollbar-thumb{
+	background-color:$CorSecundaria;
+}
+
+.container{
+	width: 800px;
+	position: relative;
+	left:50%;
+	margin-left:-400px;
+}
+
+.flex{
+	display: flex;
+}
+
+.font-bold{
+	font-weight:bold;
+}
+
+/**********************
+   LIST REPOSITORIES
+**********************/
+.list-repositories{
+	color:#FFFFFF;
+	width: 100%;
+	margin-top:80px;
+	.list-repositories__title{
+		font-family: $fonteSecundaria;
+		font-size: 65px;
+		text-align: center;
+		color:#34495e;
+		text-shadow: 1px 1px 1px #ffffff;
+		&:before{
+  			content: "\f09b";
+  			font-family: $fonteIcones;
+		    font-size: 65px;
+		    margin-right: 15px;
+		}
+	}
+	.list-repositories__search{
+		margin-top:50px;
+		position: relative;
+		.list-repositories__input{
+			width:100%;
+			height: 50px;
+			padding-left: 20px;
+			padding-right: 80px;
+			font-size: 20px;
+			background: transparent;
+			border:1px solid $CorSecundaria;
+			color:$CorSecundaria;
+			outline-color:$CorSecundaria;
+			margin-bottom: 20px;
+			&::-webkit-input-placeholder {
+			   color:$CorSecundaria;
+			   font-weight: 600;
+			   font-size: 18px;
+			}
+			&:-moz-placeholder {
+			   color:$CorSecundaria;
+			   font-weight: 600;
+			   font-size: 18px;
+			}
+			&::-moz-placeholder {
+			   color:$CorSecundaria;
+			   font-weight: 600;
+			   font-size: 18px;
+			}
+			&:-ms-input-placeholder {
+			   color:$CorSecundaria;
+			   font-weight: 600;
+			   font-size: 18px;
+			}
+		}
+		.list-repositories__button-search{
+		    position: absolute;
+		    right: 10px;
+			top: 6px;
+			width: 38px;
+			height: 38px;
+		    line-height: 38px;
+		    border: 0;
+		    background: $CorSecundaria;
+		    outline: none;
+		    cursor: pointer;
+			@include border-radius(50%);
+			&:after{
+				content: "\e900";
+				font-family: $fonteIcones;
+				font-size: 19px;
+				color:$CorPrincipal;
+			}
+		}
+	}
+	.list-repositories__item{
+		position: relative;
+		display: flex;
+		background: #fff;
+		border: 1px solid #eae1e1;
+		padding: 10px 0px;
+		margin: 1%;
+		width: 32%;
+		font-size: 16px;
+		cursor: default;
+		box-shadow: 0px 3px 1px #dcdcdc;
+		&:nth-child(3n+0){
+			margin-right:0;
+		}
+		&:nth-child(3n+1){
+			margin-left:0; 
+		}
+		.font-icon{
+			width: 50px;
+			text-align: center;
+			cursor: pointer;
+			color:$CorSecundaria;
+			&:before{
+				font-size: 22px;
+			}
+		}
+		.list-repositories__text{
+			color:#333;
+		}
+	}
+	.list-repositories__ul{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.list-repositories__total{
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		margin-top:15px;
+		margin-bottom:40px;
+		&:before{
+		    content: "";
+		    position: absolute;
+		    z-index: 0;
+		    left: 5%;
+		    width: 90%;
+		    height: 1px;
+		    margin-top: 12px;
+		    background: #63778c;
+		}
+		.list-repositories__total-texto{
+			position: relative;
+			z-index: 1;
+			padding: 0px 25px;
+			background-color: $CorPrincipal;
+			color: $CorSecundaria;
+		}
+	}
+}

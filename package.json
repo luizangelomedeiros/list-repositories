@@ -1,0 +1,39 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luiz Medeiros",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^3.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "merge-stream": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2"
+  },
+  "description": "To do List de tarefas desenvolvido com Angular, Sass, Gulp\u001b[D\u001b[D\u001b[D\u001b[D\u001b[ e Gulp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luizangelomedeiros/todolist.git"
+  },
+  "keywords": [
+    "todoliist\u001b[D\u001b[\u001b[3~\u001b[3~\u001b[3~st\u001b[3~\u001b[3~"
+  ],
+  "bugs": {
+    "url": "https://github.com/luizangelomedeiros/todolist/issues"
+  },
+  "homepage": "https://github.com/luizangelomedeiros/todolist#readme"
+}
