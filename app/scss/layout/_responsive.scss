@@ -1,42 +1,91 @@
-/* IPAD OU MENOR */
-@media screen and (max-width : 850px) {
+/* IPAD */
+@media screen and (min-width : 416px) and (max-width : 768px) {
 	.container {
 	    width: 90%;
 	    margin-left: -45%;
 	}
-	.todo-list .todo-list__item {
-	    align-items: center;
-	}
-	.todo-list__item.editar .todo-list__marcar,
-	.todo-list__item.editar .todo-list__item-text{
-		display: none;
-	}
-	.modal__conteudo {
-    	width: 90% !important;
+	.list-repositories__item{
+		width: 49% !important;
+		&:nth-child(3n+0),
+		&:nth-child(3n+1){
+			margin:1% !important;
+		}
+		&:nth-child(2n+0){
+			margin-right: 0 !important;
+		}
+		&:nth-child(2n+1){
+			margin-left: 0 !important;
+		}
 	}
 }
 
-/* IPHONE 5 OU MENOR */
-@media screen and (max-width : 350px) {
-	.todo-list{ 
-		.todo-list__item {
-    		font-size: 14px !important;
+/* SMARTPHONES */
+@media only screen and (max-width : 415px) {
+	.container {
+	    width: 90%;
+	    margin-left: -45%;
+	}
+	.list-repositories {
+        margin-top: 30px;
+	}
+	.list-repositories__item{
+		width: 100% !important;
+		margin: 1% 0 !important;
+	}
+	.list-repositories__title{
+		font-size: 55px !important;
+	}
+}
+
+/* smartphones tela media - galaxy s5 */
+@media only screen and (min-width: 330px) and (max-width: 383px) {
+	.list-repositories__input{
+	 font-size: 16px !important;
+ 	 padding-right: 70px !important;
+
+		&::-webkit-input-placeholder {
+		   font-size: 16px !important;
 		}
-		.todo-list__title {
-	    	font-size: 55px;
-		    &:before {
-			    font-size: 40px;
-			}
+		&:-moz-placeholder {
+		   font-size: 16px !important;
 		}
-		.todo-list__input {
-    		font-size: 13px !important;
+		&::-moz-placeholder {
+		   font-size: 16px !important;
 		}
-		.todo-list__remover {
-		    margin-right: 12px  !important;
-		    margin-left: 0px  !important;
+		&:-ms-input-placeholder {
+		   font-size: 16px !important;
 		}
-		.todo-list__editar {
-        	padding-right: 10px !important; 
+	}
+	.list-repositories__title{
+		font-size: 45px !important;
+		&:before{
+			font-size: 55px !important;
+		}
+	}
+}
+
+/* smartphones tela pequena - iphone 5 */
+@media only screen and (max-width: 329px) {
+	.list-repositories__input{
+	 font-size: 14px !important;
+	 padding-right: 60px !important;
+		&::-webkit-input-placeholder {
+		   font-size: 14px !important;
+		}
+		&:-moz-placeholder {
+		   font-size: 14px !important;
+		}
+		&::-moz-placeholder {
+		   font-size: 14px !important;
+		}
+		&:-ms-input-placeholder {
+		   font-size: 14px !important;
+		}
+	}
+	.list-repositories__title{
+		font-size: 40px !important;
+		&:before{
+			font-size: 50px !important;
 		}
 	}
 }

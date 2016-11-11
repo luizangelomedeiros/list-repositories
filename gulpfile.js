@@ -6,7 +6,6 @@ var gutil       = require('gulp-util');
 var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
 var sass        = require('gulp-sass');
-var imagemin    = require('gulp-imagemin');
 var minifyCSS   = require('gulp-minify-css');
 var autoprefixer= require('gulp-autoprefixer');
 var plumber     = require('gulp-plumber');
@@ -37,18 +36,6 @@ gulp.task('browserSync', function() {
         },
         notify: true
     });
-});
-
-/* COMPRIMIR IMAGENS */
-gulp.task('images', function() {
-    return gulp.src([app+'images/*.jpg', app+'images/*.png'])
-        .pipe(plumber())
-        .pipe(imagemin({
-            optimizationLevel: 5,
-            progressive: true,
-            interlaced: true
-        }))
-        .pipe(gulp.dest(dist+'images'));
 });
 
 /* COMPRIMIR SCRIPTS */
@@ -170,7 +157,6 @@ gulp.task('html', function() {
 gulp.task('scaffold', function() {
   return shell.task([
       'mkdir dist',
-      'mkdir dist/images',
       'mkdir dist/js',
       'mkdir dist/fonts',
       'mkdir dist/css'
@@ -194,7 +180,6 @@ gulp.task('default', ['scaffold','copy','browserSync', 'scripts', 'styles', 'htm
         app+'js/directives/*.js'
     ], ['scripts']);
     gulp.watch(app+'scss/**', ['styles']);
-    gulp.watch(app+'images/**', ['images']);
     gulp.watch([
         app+'*.html',
         app+'js/directives/*.html'

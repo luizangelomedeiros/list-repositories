@@ -7,25 +7,30 @@
         <link rel="stylesheet" href="css/min/styles.min.css">
         <base href="/">
     </head>
-    <body ng-controller="ListRepositories">        
+    <body ng-controller="ListRepositories"> 
+
+        <!-- container -->       
         <section class="container">
+
+            <!-- principal -->       
             <main id="listRepositoriesGithub" class="list-repositories" role="main">
+
+                <!-- titulo principal -->
                 <h1 class="list-repositories__title">
                      Repositórios
                 </h1>
 
-                <!-- ADICIONAR ITEM -->
-                <form name="formAdd" id="formAdd" ng-submit="addItemTodoList(formAdd)" focus-invalido novalidate>
-                    <div class="list-repositories__search">
-                        <input type="text" id="inputAdd" class="list-repositories__input" ng-model="itemToDoList" placeholder="Buscar por nome do repositório" name="addItemToList" ng-minlength="5" ng-maxlength="80" required>
-                        <button class="list-repositories__button-search"></button>
-                    </div>
-                </form>
-                
-                <!-- LISTA DE REPOSITÓRIOS -->
+                <!-- buscar repositorios -->
+                <div class="list-repositories__search">
+                    <input type="text" class="list-repositories__input" ng-model="filterRepositories" placeholder="Buscar por nome do repositório">
+                    <button class="list-repositories__button-search"></button>
+                </div>
+            
+                <!-- lista de repositorios -->
                 <ul class="list-repositories__ul">
-                    <li class="list-repositories__item" ng-repeat="item in itens">
-                        <a href="{{item.html_url}}" target="_blank">
+                    <li class="list-repositories__item" ng-repeat="item in itens | filter:{ name: filterRepositories }">
+                        <a href="{{item.html_url}}" target="_blank" class="list-repositories__link">
+                            <!-- usuario -->
                             <div class="flex">
                                 <span class="font-icon icon-user"></span>
                                 <p class="list-repositories__text">
@@ -33,6 +38,7 @@
                                 </p>                
                             </div>
                             
+                            <!-- projeto -->
                             <div class="flex">
                                 <span class="font-icon icon-folder-open"></span>
                                 <p class="list-repositories__text">
@@ -40,13 +46,15 @@
                                 </p>                
                             </div>
                             
+                            <!-- linguagem -->
                             <div class="flex">
                                 <span class="font-icon icon-screen"></span>
                                 <p class="list-repositories__text">
-                                    {{item.language}}
+                                    {{item.language ? item.language : 'Nenhuma linguagem'}}
                                 </p>                
                             </div>
                             
+                            <!-- forks -->
                             <div class="flex">
                                 <span class="font-icon icon-code-fork"></span>
                                 <p class="list-repositories__text">
@@ -54,20 +62,21 @@
                                 </p>  
                             </div>
 
+                            <!-- stars -->
                             <div class="flex">
                                 <span class="font-icon icon-star"></span>
                                 <p class="list-repositories__text">
-                                    {{item.forks}}
+                                    {{item.stargazers_count}}
                                 </p>  
                             </div>
                         </a>
                     </li>
                 </ul> 
                 
-                <!-- NUMERO TOTAL DE TAREFAS -->
+                <!-- numero total de repositorios -->
                 <div class="list-repositories__total">
                     <span class="list-repositories__total-texto">
-                        {{numeroDeItens()}}
+                        {{ itens | filter:{ name: filterRepositories } | totalRepositories }}
                     </span>
                 </div>
             </main>

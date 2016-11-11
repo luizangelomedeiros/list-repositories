@@ -1,15 +1,35 @@
-angular.module('listGithub').controller('ListRepositories',['$scope','$http', function($scope,$http) {
+angular.module('listGithub').
+controller('ListRepositories',['$scope','$http', 'Settings', function($scope, $http, Settings) {
 
-    /* SETANDO ITENS NA LISTA */
+    /* iniciando objeto itens */
     $scope.itens = [];
+    
+    /* iniciando variavel do filtro */
+    $scope.filterRepositories = "";
 
-    $http.get('https://api.github.com/users/luizangelomedeiros/repos?type=owner').success(function(data) {
-       $scope.itens = data;
-    });
+    /* ordem da lista de repositorios*/
+    var listOrder = "updated";
+
+    /* tipos de repositorios*/
+    var listType  = "owner";
+
+    /* buscando conteudo em json do github */
+    $http.get(
+        Settings.url+'users/'+
+        Settings.usuario+'/repos?sort='+listOrder+
+        '&type='+listType+
+        '&client_id='+Settings.id)
+    .success(function(data) {
+          $scope.itens = data;
+
+    }).error(function() {
+       alert("Ocorreu um erro !n\Tente novamente mais tarde.");
+    });;
       
-    /* RETORNA QTD DE ITENS DA LISTA */
-    $scope.numeroDeItens = function(){
-        var num = $scope.itens.length;
+/* RETORNA QTD DE REPOSITÓRIO */
+}]).filter('totalRepositories', function() {
+    return function (itens) {
+        var num = itens.length;
         var retorno = num;
         if(num<2){
             if(num<1){
@@ -21,28 +41,4 @@ angular.module('listGithub').controller('ListRepositories',['$scope','$http', fu
         }
         return retorno;
     };
-
-    /* ABRE MODAL */
-    $scope.mostraModal = false;
-    $scope.tarefaModal, $scope.itemModal = "";
-    $scope.abreModal = function(item){
-        var tarefa = $scope.itens[item].texto;
-        $scope.tarefaModal  = tarefa;
-        $scope.itemModal    = item;
-        $scope.mostraModal  = !$scope.mostraModal;
-    };
-
-    /* REMOVE ITEM NA LISTA */
-    apagaItemTodoList = function(item){
-        $scope.itens.splice(item, 1);
-    };
-
-    /* ABRE ALERT */
-    $scope.mostraAlert = false;
-    $scope.tipoAlert = "";
-    abreAlert = function(item, id){
-        $scope.tipoAlert    = item;
-        $scope.formAlert    = id;
-        $scope.mostraAlert  = !$scope.mostraModal;
-    };
-}]);    
+});
